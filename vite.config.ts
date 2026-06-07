@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
+  base: process.env.NODE_ENV === "production" ? "/LeapSpotPWA/" : "/",
   plugins: [
     vue(),
     VitePWA({
@@ -16,11 +17,11 @@ export default defineConfig({
         theme_color: "#f8fafc",
         background_color: "#f8fafc",
         display: "standalone",
-        start_url: "/",
-        scope: "/",
+        start_url: "/LeapSpotPWA/",
+        scope: "/LeapSpotPWA/",
         icons: [
           {
-            src: "/icon.svg",
+            src: "/LeapSpotPWA/icon.svg",
             sizes: "any",
             type: "image/svg+xml",
             purpose: "any maskable"
