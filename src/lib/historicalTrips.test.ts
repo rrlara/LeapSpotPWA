@@ -4,8 +4,8 @@ import { parseFeatureCollection } from "./geojson";
 
 describe("historical trip files", () => {
   it.each([
-    ["Observations_SEA.json", 169],
-    ["Observations_Mexico.json", 144]
+    ["public/Observations_SEA.json", 169],
+    ["public/Observations_Mexico.json", 144]
   ])("loads %s as read-only GeoJSON", (fileName, expectedCount) => {
     const json = JSON.parse(readFileSync(fileName, "utf8"));
     const collection = parseFeatureCollection(json);
